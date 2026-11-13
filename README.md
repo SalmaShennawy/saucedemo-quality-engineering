@@ -1,215 +1,235 @@
 # SauceDemo | Quality Engineering & Test Automation
 
-![Testing](https://img.shields.io/badge/Testing-Quality%20Engineering-blue)
-![Python](https://img.shields.io/badge/Python-3.x-yellow)
+![Testing](https://img.shields.io/badge/Testing-Manual%20%26%20Automation-blue)
+![Python](https://img.shields.io/badge/Python-3.12%2B-yellow)
 ![Playwright](https://img.shields.io/badge/Automation-Playwright-green)
+![Pytest](https://img.shields.io/badge/Framework-Pytest-blue)
 ![Status](https://img.shields.io/badge/Project-In%20Progress-orange)
 
-## Project Overview
+## 1. Project Overview
 
-This repository contains a comprehensive Quality Engineering project focused on testing the [SauceDemo](https://www.saucedemo.com/) e-commerce web application.
+This project demonstrates a comprehensive Quality Assurance and Test Automation approach for [SauceDemo](https://www.saucedemo.com/), a sample e-commerce web application.
 
-The project demonstrates a structured software testing lifecycle, starting with requirements analysis and manual test design, progressing to automated UI testing using Playwright and Python, and extending to test reporting and Continuous Integration/Continuous Deployment (CI/CD).
+The objective is to demonstrate the complete software testing lifecycle, combining structured manual testing practices with a maintainable, scalable browser automation framework.
 
-The objective is to demonstrate practical QA engineering skills, including test planning, test case design, functional testing, automation framework development, defect management, and quality reporting.
+The project covers test planning, test case design, functional testing, defect reporting, requirements traceability, automated UI testing, and continuous integration.
 
-## Project Objectives
+## 2. Project Objectives
 
-- Develop a structured and maintainable test documentation approach.
-- Design comprehensive manual test cases covering functional and negative scenarios.
-- Identify potential application defects and document them systematically.
-- Build a scalable UI automation framework using Playwright and Python.
-- Apply the Page Object Model (POM) design pattern.
-- Implement data-driven and parameterized testing.
-- Generate detailed and actionable test execution reports.
-- Integrate automated tests into a CI/CD pipeline using GitHub Actions.
+- Design and execute comprehensive manual test cases.
+- Validate core e-commerce business workflows.
+- Identify, document, and track application defects.
+- Establish requirements-to-test traceability.
+- Develop a reusable automation framework using Python and Playwright.
+- Implement automated regression testing.
+- Integrate automated test execution into CI/CD pipelines.
+- Generate clear and actionable test execution reports.
 
-## Application Under Test
+## 3. Application Under Test
 
-| Attribute | Details |
+**Application:** SauceDemo  
+**URL:** https://www.saucedemo.com/  
+**Application Type:** E-commerce Web Application
+
+### Functional Scope
+
+| Module | Testing Scope |
 |---|---|
-| Application | SauceDemo |
-| Application URL | https://www.saucedemo.com/ |
-| Application Type | E-commerce Web Application |
-| Testing Approach | Manual & Automated |
-| Automation Framework | Playwright |
-| Programming Language | Python |
-| Test Framework | Pytest |
-| Version Control | Git & GitHub |
+| Authentication | Login, validation, authentication errors |
+| Inventory | Product listing, sorting, product information |
+| Product Details | Product information and navigation |
+| Shopping Cart | Add, remove, and verify products |
+| Checkout | Customer information validation |
+| Order Completion | Price calculation and order confirmation |
+| Navigation & Session | Menu navigation, logout, application state |
 
-## Testing Scope
+## 4. Testing Approach
 
-### 1. Authentication
+The project follows a risk-based and requirement-driven testing approach.
 
-- Valid user login.
-- Invalid username and password.
-- Empty username and password.
-- Locked-out user authentication.
-- Login error messages.
-- Logout functionality.
+### Manual Testing
 
-### 2. Product Catalog
+- Functional Testing
+- Negative Testing
+- Boundary Value Analysis
+- Equivalence Partitioning
+- Exploratory Testing
+- UI Testing
+- End-to-End Testing
+- Regression Testing
 
-- Product listing validation.
-- Product details verification.
-- Product sorting (price and name).
-- Product images and descriptions.
-- Product availability.
+### Automation Testing
 
-### 3. Shopping Cart
+- UI Automation
+- Cross-browser Testing
+- Data-driven Testing
+- API Testing (where applicable)
+- Regression Automation
+- Negative Scenario Automation
 
-- Add products to cart.
-- Remove products from cart.
-- Cart item quantity validation.
-- Cart badge updates.
-- Cart persistence during navigation.
-
-### 4. Checkout Process
-
-- Checkout navigation.
-- Customer information validation.
-- Required field validation.
-- Order summary verification.
-- Price and tax calculations.
-- Order completion.
-- Confirmation message validation.
-
-### 5. Navigation & UI
-
-- Navigation menu functionality.
-- Application responsiveness.
-- Broken links and images.
-- Button functionality.
-- UI consistency.
-
-## Test Automation Strategy
-
-The automation framework will follow established software testing and automation engineering practices.
-
-**Framework design:**
-- Page Object Model (POM).
-- Pytest fixtures.
-- Data-driven testing.
-- Reusable test utilities.
-- Explicit assertions.
-- Cross-browser testing.
-- Screenshot capture on test failures.
-- Automated test reporting.
-
-## Technology Stack
+## 5. Technology Stack
 
 | Technology | Purpose |
 |---|---|
-| Python | Programming language |
+| Python | Automation programming language |
 | Playwright | Browser automation |
-| Pytest | Test execution and management |
+| Pytest | Test execution framework |
+| Pytest-xdist | Parallel execution |
+| Allure | Test reporting |
+| Faker | Test data generation |
+| Requests | API testing |
 | Git | Version control |
 | GitHub | Source code and documentation |
 | GitHub Actions | CI/CD automation |
-| Allure Reports | Test execution reporting |
 
-## Project Structure
+## 6. Repository Structure
 
 ```text
 saucedemo-quality-engineering/
 │
+├── README.md
 ├── docs/
 │   ├── test-plan.md
 │   ├── test-strategy.md
+│   ├── requirements/
 │   ├── test-cases/
-│   └── bug-reports/
+│   ├── test-data.md
+│   ├── traceability-matrix.md
+│   ├── test-execution-report.md
+│   └── test-summary-report.md
 │
-├── tests/
-│   ├── ui/
-│   ├── api/
+├── bug-reports/
+│   ├── bug-report-template.md
+│   └── defects.md
+│
+├── evidence/
+│   ├── screenshots/
+│   └── execution-records/
+│
+├── automation/
+│   ├── pages/
+│   ├── tests/
+│   ├── test_data/
 │   └── conftest.py
-│
-├── pages/
-│   ├── login_page.py
-│   ├── inventory_page.py
-│   ├── cart_page.py
-│   └── checkout_page.py
-│
-├── test_data/
-│   └── test_users.json
-│
-├── utilities/
-│
-├── reports/
 │
 ├── .github/
 │   └── workflows/
 │       └── playwright.yml
 │
 ├── requirements.txt
-├── pytest.ini
-├── .gitignore
-└── README.md
+└── pytest.ini
 ```
 
-*Note: This represents the planned project structure and will evolve as implementation progresses.*
+## 7. Test Coverage
 
-## Test Documentation
+The initial manual test design targets approximately 60 test cases across seven functional modules.
 
-Test documentation will include:
+| Module | Planned Test Cases |
+|---|---:|
+| Authentication | 10 |
+| Inventory | 12 |
+| Product Details | 5 |
+| Shopping Cart | 10 |
+| Checkout Information | 7 |
+| Order Completion | 8 |
+| Navigation & Session | 8 |
+| **Total** | **60** |
 
-- Test Plan.
-- Test Strategy.
-- Functional Test Scenarios.
-- Detailed Manual Test Cases.
-- Test Execution Results.
-- Defect Reports.
-- Requirements Traceability Matrix (RTM).
-- Automation Coverage Report.
+These are initial design targets. Actual coverage and execution results will be updated as testing progresses.
 
-## Execution & Reporting
+## 8. Automation Framework Design
 
-The automation suite will be designed to support:
+The automation framework will follow the Page Object Model (POM) design pattern.
 
-- Local test execution.
-- Headless and headed browser execution.
+Key engineering practices:
+
+- Reusable page objects and components.
+- Centralized configuration.
+- Reusable Pytest fixtures.
+- Independent and maintainable test cases.
+- Data-driven testing.
+- Explicit synchronization and reliable locators.
+- Automatic screenshots on failure.
+- Logging and execution reporting.
 - Cross-browser execution.
-- HTML test reports.
-- Allure test reports.
-- Screenshots and debugging evidence.
+- CI/CD integration.
 
-## CI/CD Integration
+## 9. Execution Instructions
 
-GitHub Actions will be used to automate test execution.
+The automation environment will use Python, Playwright and Pytest.
 
-The planned pipeline will:
-1. Trigger on code pushes and pull requests.
-2. Set up the Python environment.
-3. Install project dependencies.
-4. Install Playwright browsers.
-5. Execute the automated test suite.
-6. Publish test reports and execution artifacts.
+### Prerequisites
 
-## Project Roadmap
+- Python 3.12+
+- Git
+- Visual Studio Code
 
-- [ ] Repository setup and documentation.
-- [ ] Application analysis and requirements review.
-- [ ] Test Plan and Test Strategy.
-- [ ] Manual test case design.
-- [ ] Test execution and defect documentation.
-- [ ] Playwright framework implementation.
-- [ ] Page Object Model implementation.
-- [ ] Data-driven automation.
-- [ ] Negative and boundary testing.
-- [ ] Test reporting and screenshots.
-- [ ] GitHub Actions CI/CD integration.
-- [ ] Final test execution and coverage analysis.
+### Installation
 
-## Author
+```bash
+git clone <YOUR_REPOSITORY_URL>
+cd saucedemo-quality-engineering
 
-**Salma Shennawy**
+python -m venv venv
+```
 
-Software Testing & Quality Engineering
+Activate the virtual environment:
 
-Interested in Software Quality, Test Automation, Python, Playwright, and AI-driven Quality Engineering.
+**Windows**
 
-[GitHub Profile](https://github.com/SalmaShennawy)
+```bash
+venv\Scripts\activate
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+playwright install
+```
+
+Execute the test suite:
+
+```bash
+pytest automation/tests -v
+```
+
+*Execution instructions will be finalized when the automation framework is implemented.*
+
+## 10. Project Deliverables
+
+- [ ] Test Plan and Test Strategy
+- [ ] Functional Requirements Documentation
+- [ ] Complete Manual Test Case Suite
+- [ ] Test Data Documentation
+- [ ] Requirements Traceability Matrix
+- [ ] Manual Test Execution Results
+- [ ] Defect Reports and Supporting Evidence
+- [ ] Test Summary Report
+- [ ] Playwright Automation Framework
+- [ ] Automated Regression Suite
+- [ ] Allure Test Reports
+- [ ] GitHub Actions CI/CD Pipeline
+
+## 11. Quality Engineering Practices
+
+This project emphasizes:
+
+- Clear and traceable test documentation.
+- Risk-based test prioritization.
+- Reusable automation architecture.
+- Maintainable and readable code.
+- Meaningful assertions.
+- Reproducible test execution.
+- Evidence-based defect reporting.
+- Continuous testing and improvement.
+
+## 12. Disclaimer
+
+SauceDemo is a demonstration application. Testing is performed for educational and portfolio purposes. No real customer transactions or production systems are involved.
 
 ---
 
-*This is an evolving portfolio project. Documentation, implementation, and test coverage will be updated throughout the development lifecycle.*
+**Project:** SauceDemo Quality Engineering & Test Automation  
+**Focus:** Manual Testing | Python | Playwright | Pytest | CI/CD  
+**Repository Status:** In Progress
